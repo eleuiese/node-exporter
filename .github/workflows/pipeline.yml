@@ -1,5 +1,5 @@
 ---
-name: Pipeline Prometheus
+name: Pipeline Node-Exporter
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 jobs:
   promapp:
     timeout-minutes: 15
-    name: 'Prom-app'
+    name: 'Node-app'
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.TF_GITHUB_TOKEN }}
@@ -32,4 +32,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/promapp:latest
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/nodeapp:latest
