@@ -6,6 +6,6 @@ ENV $HW_HOME/sysfs=/rootfs
 CMD        ["--path.procfs=/host/proc"]
 CMD        ["--path.rootfs=/rootfs"]
 CMD        ["--path.sysfs=/host/sys"]
-CMD        ["--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)"]
+CMD        ["--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host)($$|/)"]
 EXPOSE 9100
 
